@@ -1,6 +1,6 @@
 from re import U
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as login_django
 from django.contrib.auth.decorators import login_required
@@ -36,10 +36,11 @@ def login(request):
 
         if user:
             login_django(request, user)
-            return HttpResponse('autenticado')
+            return games(request)
         else:
             return HttpResponse("Email ou senha inválidos")
+
     
 @login_required(login_url="/auth/login/")
-def plataforma(request):
-    return HttpResponse("Plataforma")
+def games(request):
+     return  HttpResponseRedirect('/games/jogos/')
