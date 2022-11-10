@@ -7,6 +7,7 @@
     <title>Jogos</title>
 </head>
 <body>
+    <form action="{% url 'jogos' %}" method="POST"> {% csrf_token %}
     <table style="width:100%">
         <tr>
           <th>Jogos</th>
@@ -16,7 +17,7 @@
         
     <tr>
     {% for jogo in jogos %}
-    <td>{{ jogo }}</td>
+    <td>{{ jogo }}  <input type ='text' name= {{ jogo.id }}_time_1> x <input type ='text' name={{ jogo.id }}_time_2></td>
     <td>{{ jogo.date }}</td>
     </tr>
     {% endfor %}
@@ -24,6 +25,8 @@
 
 
     </table>
+    <input type ='submit' placeholder="enviar">
+    </form>   
     
     
 </body>
