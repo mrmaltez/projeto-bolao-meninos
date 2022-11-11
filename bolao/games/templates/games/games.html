@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,29 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogos</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <form action="{% url 'jogos' %}" method="POST"> {% csrf_token %}
-    <table style="width:100%">
-        <tr>
-          <th>Jogos</th>
-          <th>Data</th>
-        </tr>
-
-        
-    <tr>
-    {% for jogo in jogos %}
-    <td>{{ jogo }}  <input type ='text' name= {{ jogo.id }}_time_1> x <input type ='text' name={{ jogo.id }}_time_2></td>
-    <td>{{ jogo.date }}</td>
-    </tr>
-    {% endfor %}
-
-
-
-    </table>
+        <div id="app">
+            <header>
+             <img src="{% static 'img/R9.jpeg' %}" width="30%" height="30%" alt="Logo NLW Copa Calendario" />
+             <div>
+             <button onclick="temaGreen()" class="bg_primary"></button>
+             <button onclick="temaBlue()" class="bg_secundary"></button>
+           </div> 
+           </header>  
+           
+            <main id="cards">
+            </main>
     <input type ='submit' placeholder="enviar">
     </form>   
     
-    
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
