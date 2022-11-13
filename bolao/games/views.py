@@ -15,22 +15,24 @@ def games(request):
         # user
         current_user = request.user
         print(current_user.id)
-        results = {}
-        all_entries = Games.objects.values()
-        # 
-        for i in all_entries:
-            i = i["id"]
-            name_1 = f'{i}_time_1'
-            name_2 = f'{i}_time_2'
-            results[i] = {'time_1':request.POST.get(name_1),
-            'time_2':request.POST.get(name_2)}
-            bet = Bets(fk_userId = current_user,
-            fk_gameId = Games(id=1),
-            team1_score = request.POST.get(name_1),
-            team2_score = request.POST.get(name_2))
-            bet.save()
+        result = request.POST.get('jogo_1_time_2')
+        print(result)
+        # results = {}
+        # all_entries = Games.objects.values()
+        # # 
+        # for i in all_entries:
+        #     i = i["id"]
+        #     name_1 = f'{i}_time_1'
+        #     name_2 = f'{i}_time_2'
+        #     results[i] = {'time_1':request.POST.get(name_1),
+        #     'time_2':request.POST.get(name_2)}
+        #     bet = Bets(fk_userId = current_user,
+        #     fk_gameId = Games(id=1),
+        #     team1_score = request.POST.get(name_1),
+        #     team2_score = request.POST.get(name_2))
+        #     bet.save()
 
-        # email = request.POST.get('email')
-        # password = request.POST.get('password')
-        print(results)
+        # # email = request.POST.get('email')
+        # # password = request.POST.get('password')
+        # print(results)
         return HttpResponse("Dados Salvos")

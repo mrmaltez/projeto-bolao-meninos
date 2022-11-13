@@ -1,6 +1,9 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+<script>
+var GLOBAL_PATH = '{{ STATIC_PATH }}'; 
+</script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,8 +17,6 @@
             <header>
              <img src="{% static 'img/R9.jpeg' %}" width="30%" height="30%" alt="Logo NLW Copa Calendario" />
              <div>
-             <button onclick="temaGreen()" class="bg_primary"></button>
-             <button onclick="temaBlue()" class="bg_secundary"></button>
            </div> 
            </header>  
            

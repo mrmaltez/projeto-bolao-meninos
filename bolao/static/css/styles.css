@@ -186,3 +186,19 @@
       flex-wrap: wrap;
     }
   }
+
+  .heighttext{
+    padding:15px 10px;
+    color: #f7dd43;
+    font-size: 20px;
+    width: 20%;
+    background-color: #1D1C19;
+    opacity: 80%;
+    border-color: #f7dd43;
+    border-radius: 20px;
+    text-align: center;
+}
+
+h3{
+  color: #f7dd43;
+}

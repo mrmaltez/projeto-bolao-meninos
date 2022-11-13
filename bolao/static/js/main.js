@@ -2,12 +2,12 @@ function createGame(player1, hour, player2) {
     return `
     <li>
                 <figure>
-                    <img src="{% static 'img/icon=${player1}.svg' %}" alt="Bandeira do ${player1}" />
+                    <img src="/static/img/icon=${player1}.svg" alt="Bandeira do ${player1}" />
                     <figcaption>${player1}</figcaption>
                 </figure>
-                <strong>${hour}</strong>
+                <input class="heighttext" type="text" name='jogo_1_time_1'> <h3>x</h3> <input class="heighttext" type="text" name='jogo_1_time_2'> 
                 <figure>
-                    <img src="{% static 'img/icon=${player2}.svg' %}" alt="Bandeira do ${player2}" />
+                    <img src="/static/img/icon=${player2}.svg" alt="Bandeira do ${player2}" />
                     <figcaption>${player2}</figcaption>
                 </figure>
               </li>
@@ -99,9 +99,3 @@ function createGame(player1, hour, player2) {
           createGame('cameroon', '16:00', 'brazil')
         )}
   `
-  function temaGreen() {
-    document.body.classList.toggle("green");
-  }
-  function temaBlue() {
-    document.body.classList.toggle("blue");
-  }
