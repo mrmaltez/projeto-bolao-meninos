@@ -1,24 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+    <script>
+        var GLOBAL_PATH = '{{ STATIC_PATH }}'; 
+   </script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
 </head>
 <body>
-    <form action="{% url 'register' %}" method="POST"> {% csrf_token %}
-        <input type ='text' placeholder="Username...." name="username">
-        <br>
-        <br>
-        <input type ='email' placeholder="Email...." name="email"> 
-        <br>
-        <br>
-        <input type ='password' placeholder="Senha...." name="password">
-        <br>
-        <br>
-        <input type ='submit' placeholder="cadastrar">   
-    </form>
+    <div class="login-page">
+        <div class="form">
+            <form class ="register-form" action="{% url 'register' %}" method="POST"> {% csrf_token %}
+                <input type ='text' placeholder="username" name="username">
+                <input type ='email' placeholder="email" name="email"> 
+                <input type ='password' placeholder="senha" name="password">
+                <button>Criar conta</button>
+                <p class="message">Já tem uma conta? <a href="#">Entre por aqui!</a></p>
+            </form>
+        </div>
+    </div>
     
 </body>
 </html>
