@@ -8,7 +8,7 @@ class Games(models.Model):
     date = models.DateField()
 
     def __str__(self):
-        return f"{self.teamId_1} x  {self.teamId_2}"
+        return f"ID: {self.id} - {self.teamId_1} x  {self.teamId_2}"
 
     class Meta:
         verbose_name_plural = "Jogos"
