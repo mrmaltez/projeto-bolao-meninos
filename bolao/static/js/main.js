@@ -5,7 +5,7 @@ function createGame(player1, player2, id) {
                     <img src="/static/img/icon=${player1}.svg" alt="Bandeira do ${player1}" />
                     <figcaption>${player1}</figcaption>
                 </figure>
-                <input class="heighttext" type="text" name='jogo_${id}_time_1'> <h3>x</h3> <input class="heighttext" type="text" name='jogo_${id}_time_2'> 
+                <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_1' maxlength="2"> <h3>x</h3> <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_2' maxlength="2"> 
                 <figure>
                     <img src="/static/img/icon=${player2}.svg" alt="Bandeira do ${player2}" />
                     <figcaption>${player2}</figcaption>
@@ -260,7 +260,17 @@ function createGame(player1, player2, id) {
 
   document.querySelector('#cards').innerHTML = adjust_cards(jogos)
 
-
+  function onlynumber(evt) {
+    var theEvent = evt || window.event;
+    var key = theEvent.keyCode || theEvent.which;
+    key = String.fromCharCode( key );
+    //var regex = /^[0-9.,]+$/;
+    var regex = /^[0-9.]+$/;
+    if( !regex.test(key) ) {
+       theEvent.returnValue = false;
+       if(theEvent.preventDefault) theEvent.preventDefault();
+    }
+ }
 
 
 
