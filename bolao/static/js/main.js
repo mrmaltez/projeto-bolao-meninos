@@ -5,7 +5,7 @@ function createGame(player1, player2, id) {
                     <img src="/static/img/icon=${player1}.svg" alt="Bandeira do ${player1}" />
                     <figcaption>${player1}</figcaption>
                 </figure>
-                <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_1' maxlength="2"> <h3>x</h3> <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_2' maxlength="2"> 
+                <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_1' maxlength="2"'cm> <h3>x</h3> <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_2' maxlength="2"> 
                 <figure>
                     <img src="/static/img/icon=${player2}.svg" alt="Bandeira do ${player2}" />
                     <figcaption>${player2}</figcaption>
@@ -24,7 +24,7 @@ function createGame(player1, player2, id) {
     `
   }
   var jogos = { 'card_1':{
-    'dia': '20/11',
+    'dia': '20/10',
     'dia_semana': 'Domingo',
     'jogos':{'jogo1': {'time1':'qatar',
                        'time2':'ecuador',
@@ -243,20 +243,35 @@ function createGame(player1, player2, id) {
     var x = ''
     for (var card in jogos){
       x += `${createCard(jogos[card]['dia'],
-      jogos[card]['dia_semana'],create_games(jogos[card]))}`
+      jogos[card]['dia_semana'],create_games(jogos[card],jogos[card]['dia']))}`
 
     }
     return x
   }
 
-  function create_games(jogos){
+  function create_games(jogos, date){
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
     var games = ''
+    var dataAtual = new Date();
+    var dateString = `${date}/2022`; 
+    var dataJogo = new Date(dateString);
+    var jogoPassou = (dataAtual >= dataJogo)
+    console.log(jogoPassou)
+    if(jogoPassou){
+      for (var jogo in jogos['jogos']){
+        games += `${createGameDisabledInput(jogos['jogos'][jogo]['time1'],
+        jogos['jogos'][jogo]['time2'],jogos['jogos'][jogo]['id'])}`
+      }
+
+    } else { 
       for (var jogo in jogos['jogos']){
         games += `${createGame(jogos['jogos'][jogo]['time1'],
         jogos['jogos'][jogo]['time2'],jogos['jogos'][jogo]['id'])}`
       }
+    }
     return games
   }
+    
 
   document.querySelector('#cards').innerHTML = adjust_cards(jogos)
 
@@ -273,7 +288,21 @@ function createGame(player1, player2, id) {
  }
 
 
-
+ function createGameDisabledInput(player1, player2, id) {
+  return `
+  <li>
+              <figure>
+                  <img src="/static/img/icon=${player1}.svg" alt="Bandeira do ${player1}" />
+                  <figcaption>${player1}</figcaption>
+              </figure>
+              <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_1' maxlength="2" disabled> <h3>x</h3> <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_2' maxlength="2" disabled> 
+              <figure>
+                  <img src="/static/img/icon=${player2}.svg" alt="Bandeira do ${player2}" />
+                  <figcaption>${player2}</figcaption>
+              </figure>
+            </li>
+  `
+}
 
 
 
