@@ -24,7 +24,7 @@ function createGame(player1, player2, id) {
     `
   }
   var jogos = { 'card_1':{
-    'dia': '20/10',
+    'dia': '20/11',
     'dia_semana': 'Domingo',
     'jogos':{'jogo1': {'time1':'qatar',
                        'time2':'ecuador',
@@ -250,11 +250,16 @@ function createGame(player1, player2, id) {
   }
 
   function create_games(jogos, date){
-    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
     var games = ''
     var dataAtual = new Date();
     var dateString = `${date}/2022`; 
-    var dataJogo = new Date(dateString);
+    var date1 = dateString.split('/')
+    var newDate = date1[1] + '/' +date1[0] +'/' +date1[2];
+    var dataJogo = new Date(newDate);
+    dataJogo = dataJogo.setHours(0,0,0,0);
+    dataAtual = dataAtual.setHours(0,0,0,0);
+    console.log(dataAtual)
+    console.log(dataJogo)
     var jogoPassou = (dataAtual >= dataJogo)
     console.log(jogoPassou)
     if(jogoPassou){
