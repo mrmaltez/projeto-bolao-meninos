@@ -22,11 +22,19 @@ def games(request):
                 i = i["id"]
                 name_1 = f'jogo_{i}_time_1'
                 name_2 = f'jogo_{i}_time_2'
-                bet = Bets(fk_userId = current_user,
-                fk_gameId = Games(id=i),
-                team1_score = request.POST.get(name_1),
-                team2_score = request.POST.get(name_2))
-                bet.save()
+                if Bets.objects.filter(fk_userId = current_user,
+                    fk_gameId = Games(id=i)).exists():
+                    update_saved = Bets.objects.get(fk_userId = current_user,
+                    fk_gameId = Games(id=i))
+                    update_saved.team1_score = request.POST.get(name_1)
+                    update_saved.team2_score = request.POST.get(name_2)
+                    update_saved.save()
+                else:
+                    bet = Bets(fk_userId = current_user,
+                    fk_gameId = Games(id=i),
+                    team1_score = request.POST.get(name_1),
+                    team2_score = request.POST.get(name_2))
+                    bet.save()
             except:
                 print(f"Não foi possível salvar o jogo de id {i} na base")
 
