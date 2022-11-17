@@ -20,7 +20,6 @@ def ranking(request):
             winner = 'team2'
 
         bets_game = Bets.objects.filter(fk_gameId = gameId)
-        print(bets_game, winner)
         for bet in bets_game:
             userId = bet.fk_userId
             if userId not in ranking_score.keys():
@@ -30,7 +29,6 @@ def ranking(request):
             if bet_result_team1 == result_team1 and bet_result_team2 == result_team2:
                 ranking_score[userId]['pontuacao'] += 20
                 ranking_score[userId]['correct_results'] += 1
-                ranking_score[userId]['correct_winner'] += 1
             elif bet_result_team1 == bet_result_team2 and winner == 'draw':
                 ranking_score[userId]['pontuacao'] += 10
             elif bet_result_team1 > bet_result_team2 and winner == 'team1':
@@ -56,4 +54,10 @@ def ranking(request):
                     correct_results = correct_results,
                     correct_winner = correct_winner)
             ranking.save()
+
+
+    # order ranking 
+    all_entries = Ranking.objects.order_by('-pontuacao','-correct_results','-correct_winner')
+    return render(request, 'ranking/ranking.html',
+        context= {"ranking":all_entries})
             
