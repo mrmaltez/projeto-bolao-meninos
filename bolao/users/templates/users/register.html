@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
 </head>
 <body>
+    <div class ="caixa-registro">
+        <h1>REGISTRO</h1>
+        </div>
     <div class="login-page">
         <div class="form">
             <form class ="register-form" action="{% url 'register' %}" method="POST"> {% csrf_token %}
@@ -19,7 +22,7 @@
                 <input type ='email' placeholder="email" name="email"> 
                 <input type ='password' placeholder="senha" name="password">
                 <button>Criar conta</button>
-                <p class="message">Já tem uma conta? <a href="#">Entre por aqui!</a></p>
+                <p class="message">Já tem uma conta? <a href="../login">Entre por aqui!</a></p>
             </form>
         </div>
     </div>

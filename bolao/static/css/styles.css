@@ -27,15 +27,34 @@
   ul {
     list-style: none;
   }
+
+  h3 {
+    color: #e2c93c;
+  }
   
   button {
     align-self: flex-start;
     padding: 14px;
     cursor: pointer;
     box-sizing: border-box;
-    border-radius: 50%;
+    background-color: #e2c93c;
+    color: #000;
+    margin-top: 25px;
+    border-radius: 6px;
+    transition: 0.3s all ease;
+    text-transform: uppercase;
+    
   }
-  
+
+  button:hover {
+    background-color:#746615 ;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+
   body {
     background: #121214;
     background-image: var(--bg-img);
@@ -62,11 +81,12 @@
   #app {
     width: fit-content;
     margin: auto;
-    padding-top: 52px;
+    padding-top: 32px;
   }
   
   header{
-    margin-bottom: 63px;
+    padding-top: 50px;
+    margin-bottom: 43px;
     text-align: center;
   }
   
@@ -160,14 +180,37 @@
   .card {
     animation: appear .2s;
   }
-  
-  footer {
-    text-align: center;
-    font-size: 12px;
-    line-height: 20px;
-    color: #e1e1e6;
-    margin: 8px;
+
+  .input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 20px;
   }
+
+  input {
+    background-color: #e2c93c ;
+    position: relative;
+    display: block;
+    color: #000;;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 30px 0;
+    padding: 14px 60px;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-bottom: 2px solid #e2c93c;
+    border-radius: 6px;
+    transition: 0.3s all ease;
+    cursor: pointer;
+  }
+
+  input:hover {
+    background-color:#9e8b1f ;
+  }
+  
+  
   @keyframes appear {
     0% {
       transform: translateY(-50px);
@@ -185,9 +228,10 @@
       flex-direction: row;
       flex-wrap: wrap;
     }
+    
   }
 
-  .heighttext{
+  .heighttext {
     padding:15px 10px;
     color: #f7dd43;
     font-size: 20px;
@@ -197,8 +241,4 @@
     border-color: #f7dd43;
     border-radius: 20px;
     text-align: center;
-}
-
-h3{
-  color: #f7dd43;
 }

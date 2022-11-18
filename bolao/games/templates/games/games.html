@@ -12,18 +12,31 @@ var GLOBAL_PATH = '{{ STATIC_PATH }}';
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
+    
+    <header>
+
+        <h3>BOLÃO DOS MENINOS</h1>
+   <div>
+
+       <button><a href="../../ranking">RANKING</a></button>
+       <button><a href="../../auth/login">LOGOUT</a></button>
+    </div> 
+    </header>  
+
     <form action="{% url 'jogos' %}" method="POST"> {% csrf_token %}
         <div id="app">
-            <header>
-             <img src="{% static 'img/logo.svg' %}" alt="Logo NLW Copa Calendario" />
-             <div>
-           </div> 
-           </header>  
+            
+           
+           
            
             <main id="cards">
             </main>
-    <input type ='submit' placeholder="enviar">
+
+            <div class="input">
+                <input type ='submit' placeholder="enviar">
+            </div>
     </form>   
+
     
     <script src="{% static 'js/main.js' %}"></script>
 </body>

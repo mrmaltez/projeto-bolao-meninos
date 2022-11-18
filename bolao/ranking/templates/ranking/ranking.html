@@ -1,31 +1,40 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+<script>
+    var GLOBAL_PATH = '{{ STATIC_PATH }}'; 
+</script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ranking</title>
+    <link rel="stylesheet" href="{% static 'css/ranking.css' %}">
 </head>
+
+<h1><span class="blue"></span>Ranking Geral<span class="blue"></span> 
+    <h2><button><a href="../games/jogos">Voltar para os jogos</a></button></p></h2>
+    
 <body>
-    <table style="width:100%">
+    <table class ="container">
         <tr>
-          <td>Colocação</td>
-          <td>Nome</td>
-          <td>Pontuação</td>
-          <td>Acertos Placar</td>
-          <td>Acertos Vencedor</td>
-        </tr>
+			<th><h1>Colocação</h1></th>
+			<th><h1>Nome</h1></th>
+			<th><h1>Acerto Parcial</h1></th>
+			<th><h1>Acerto Total</h1></th>
+            <th><h1>Pontuação</h1></th>
+		</tr>
     
     {% for rank in ranking %}
-    <tr>
-        <td>{{forloop.counter}}</td>
-        <td>{{rank.fk_userId}}</td>
-        <td>{{rank.pontuacao}}</td>
-        <td>{{rank.correct_results}}</td>
-        <td>{{rank.correct_winner}}</td>
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{rank.fk_userId}}</td>
+            <td>{{rank.correct_winner}}</td>
+            <td>{{rank.correct_results}}</td>
+            <td>{{rank.pontuacao}}</td>
 
-    {% endfor %}
-</tr>
+        {% endfor %}
+        </tr>
 </table>
     
 </body>
