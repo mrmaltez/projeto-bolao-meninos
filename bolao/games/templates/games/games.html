@@ -17,9 +17,10 @@ var GLOBAL_PATH = '{{ STATIC_PATH }}';
 
         <h3>BOLÃO DOS MENINOS</h1>
    <div>
-
-       <button><a href="../../ranking">RANKING</a></button>
-       <button><a href="../../auth/login">LOGOUT</a></button>
+       <form action="{% url 'jogos' %}" method="POST"> {% csrf_token %}
+       <button name = 'ranking' value = 'ranking'><a>RANKING</a></button>
+       <button name = 'logout' value = 'logout'><a>LOGOUT</a></button>
+        </form>
     </div> 
     </header>  
 
@@ -33,7 +34,7 @@ var GLOBAL_PATH = '{{ STATIC_PATH }}';
             </main>
 
             <div class="input">
-                <input type ='submit' placeholder="enviar">
+                <input type ='submit' placeholder="enviar" name = "submit">
             </div>
     </form>   
 
