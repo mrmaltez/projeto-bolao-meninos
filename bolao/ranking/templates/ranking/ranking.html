@@ -26,10 +26,10 @@
             <th><h1>Pontuação</h1></th>
 		</tr>
     
-    {% for rank in ranking %}
+    {% for rank,user in ranking %}
         <tr>
             <td>{{forloop.counter}}</td>
-            <td>{{rank.fk_userId}}</td>
+            <td>{{user.first_name}} {{user.last_name}}</td>
             <td>{{rank.correct_winner}}</td>
             <td>{{rank.correct_results}}</td>
             <td>{{rank.pontuacao}}</td>

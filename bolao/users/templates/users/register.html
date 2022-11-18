@@ -18,9 +18,28 @@
     <div class="login-page">
         <div class="form">
             <form class ="register-form" action="{% url 'register' %}" method="POST"> {% csrf_token %}
+                {% if fl_erro == 1 %}
+                <p style="color:red;">Usuário {{ username }} já existe</p>
+                <input type ='text' placeholder="username" name="username" value={{ username }}>
+                <input type ='text' placeholder="Nome" name="primeiro_nome" value = {{ nome }}>
+                <input type ='text' placeholder="Sobrenome" name="sobrenome" value = {{ sobrenome }}>
+                <input type ='email' placeholder="email" name="email" value={{ email }}> 
+                <input type ='password' placeholder="senha" name="password">
+                {% elif fl_erro_nome == 1 %}
+                <p style="color:red;">Insira o nome e o sobrenome</p>
+                <input type ='text' placeholder="username" name="username" value={{ username }}>
+                <input type ='text' placeholder="Nome" name="primeiro_nome" value = {{ nome }}>
+                <input type ='text' placeholder="Sobrenome" name="sobrenome" value = {{ sobrenome }}>
+                <input type ='email' placeholder="email" name="email" value={{ email }}> 
+                <input type ='password' placeholder="senha" name="password">
+                {% else %}
                 <input type ='text' placeholder="username" name="username">
+                <input type ='text' placeholder="Nome" name="primeiro_nome">
+                <input type ='text' placeholder="Sobrenome" name="sobrenome">
                 <input type ='email' placeholder="email" name="email"> 
                 <input type ='password' placeholder="senha" name="password">
+                {% endif %}
+       
                 <button>Criar conta</button>
                 <p class="message">Já tem uma conta? <a href="../login">Entre por aqui!</a></p>
             </form>

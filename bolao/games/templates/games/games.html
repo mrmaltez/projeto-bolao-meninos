@@ -18,6 +18,9 @@ var GLOBAL_PATH = '{{ STATIC_PATH }}';
         <h3>BOLÃO DOS MENINOS</h1>
    <div>
        <form action="{% url 'jogos' %}" method="POST"> {% csrf_token %}
+        {% if fl_games == 1%}
+        <p style="color:green;">Suas apostas foram enviadas!</p>
+        {% endif %}
        <button name = 'ranking' value = 'ranking'><a>RANKING</a></button>
        <button name = 'logout' value = 'logout'><a>LOGOUT</a></button>
         </form>

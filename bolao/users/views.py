@@ -12,16 +12,33 @@ def register(request):
         username = request.POST.get('username')
         email = request.POST.get('email')
         password = request.POST.get('password')
+        first_name = request.POST.get('primeiro_nome')
+        last_name = request.POST.get('sobrenome')
 
         user = User.objects.filter(username = username).first()
-
         if user:
-            return HttpResponse("Usuário já existe")
+            return render(request, 'users/register.html',
+        context= {"fl_erro":1,
+                "email":email,
+                "username":username,
+                "nome": first_name,
+                "sobrenome": last_name})
+        if first_name == "" or last_name == "":
+            return render(request, 'users/register.html',
+            context = {
+                "email":email,
+                "username":username,
+                "fl_erro_nome":1,
+                "nome": first_name,
+                "sobrenome": last_name})
+
         
         else:
-            user = User.objects.create_user(username, email, password)
+            user = User.objects.create_user(username=username, email=email, password=password,first_name=first_name,
+            last_name = last_name)
 
-        return HttpResponse("Usuário cadastrado com sucesso!")
+        return render(request, 'users/login.html',
+        context= {"fl_register":1})
 
 
 
@@ -38,7 +55,8 @@ def login(request):
             login_django(request, user)
             return games(request)
         else:
-            return HttpResponse("Email ou senha inválidos")
+            return render(request, 'users/login.html',
+        context= {"fl_erro":1})
 
     
 @login_required(login_url="/auth/login/")

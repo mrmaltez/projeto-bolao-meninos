@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from games.models import Bets, Results
 from .models import Ranking
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -59,6 +60,9 @@ def ranking(request):
 
     # order ranking 
     all_entries = Ranking.objects.order_by('-pontuacao','-correct_results','-correct_winner')
+    users = all_entries.values_list('fk_userId',flat=True)
+    user_details = User.objects.filter(id__in=users)
+    print(user_details)
     return render(request, 'ranking/ranking.html',
-        context= {"ranking":all_entries})
+        context= {"ranking":zip(all_entries,user_details)})
             

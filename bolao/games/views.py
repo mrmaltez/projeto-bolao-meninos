@@ -48,4 +48,5 @@ def games(request):
             # # email = request.POST.get('email')
             # # password = request.POST.get('password')
             # print(results)
-            return HttpResponse("Dados Salvos")
+            return render(request, 'games/games.html',
+        context= {"fl_games":1})

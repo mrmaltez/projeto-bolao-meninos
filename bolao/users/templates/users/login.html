@@ -16,10 +16,17 @@
     <div class ="caixa-login">
     <h1>LOGIN</h1>
     </div>
+    
+    
     <div class="login-page">
 
         <div class="form">
             <form class ="login-form" action="{% url 'login' %}" method="POST"> {% csrf_token %}
+                {% if fl_erro == 1%}
+                <p style="color:red;">Email ou senha inválidos.</p>
+                {% elif fl_register == 1%}
+                <p style="color:green;">Usuário registrado com sucesso!</p>
+                {% endif %}
                 <input type ='text' placeholder="username" name="username">
                 <input type ='password' placeholder="senha" name="password">
                 <button>login</button>
