@@ -239,26 +239,75 @@ function createGame(player1, player2, id) {
 
 }
 
-  function adjust_cards(jogos){
-    var x = ''
-    for (var card in jogos){
-      x += `${createCard(jogos[card]['dia'],
-      jogos[card]['dia_semana'],create_games(jogos[card]))}`
+function adjust_cards(jogos){
+  var x = ''
+  for (var card in jogos){
+    x += `${createCard(jogos[card]['dia'],
+    jogos[card]['dia_semana'],create_games(jogos[card],jogos[card]['dia']))}`
 
+  }
+  return x
+}
+
+function create_games(jogos, date){
+  var games = ''
+  var dataAtual = new Date();
+  var dateString = `${date}/2022`; 
+  var date1 = dateString.split('/')
+  var newDate = date1[1] + '/' +date1[0] +'/' +date1[2];
+  var dataJogo = new Date(newDate);
+  dataJogo = dataJogo.setHours(0,0,0,0);
+  dataAtual = dataAtual.setHours(0,0,0,0);
+  console.log(dataAtual)
+  console.log(dataJogo)
+  var jogoPassou = (dataAtual >= dataJogo)
+  console.log(jogoPassou)
+  if(jogoPassou){
+    for (var jogo in jogos['jogos']){
+      games += `${createGameDisabledInput(jogos['jogos'][jogo]['time1'],
+      jogos['jogos'][jogo]['time2'],jogos['jogos'][jogo]['id'])}`
     }
-    return x
-  }
 
-  function create_games(jogos){
-    var games = ''
-      for (var jogo in jogos['jogos']){
-        games += `${createGame(jogos['jogos'][jogo]['time1'],
-        jogos['jogos'][jogo]['time2'],jogos['jogos'][jogo]['id'])}`
-      }
-    return games
+  } else { 
+    for (var jogo in jogos['jogos']){
+      games += `${createGame(jogos['jogos'][jogo]['time1'],
+      jogos['jogos'][jogo]['time2'],jogos['jogos'][jogo]['id'])}`
+    }
   }
+  return games
+}
+  
 
-  document.querySelector('#cards').innerHTML = adjust_cards(jogos)
+document.querySelector('#cards').innerHTML = adjust_cards(jogos)
+
+function onlynumber(evt) {
+  var theEvent = evt || window.event;
+  var key = theEvent.keyCode || theEvent.which;
+  key = String.fromCharCode( key );
+  //var regex = /^[0-9.,]+$/;
+  var regex = /^[0-9.]+$/;
+  if( !regex.test(key) ) {
+     theEvent.returnValue = false;
+     if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+}
+
+
+function createGameDisabledInput(player1, player2, id) {
+return `
+<li>
+            <figure>
+                <img src="/static/img/icon=${player1}.svg" alt="Bandeira do ${player1}" />
+                <figcaption>${player1}</figcaption>
+            </figure>
+            <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_1' maxlength="2" disabled> <h3>x</h3> <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_2' maxlength="2" disabled> 
+            <figure>
+                <img src="/static/img/icon=${player2}.svg" alt="Bandeira do ${player2}" />
+                <figcaption>${player2}</figcaption>
+            </figure>
+          </li>
+`
+}
 
 
 
