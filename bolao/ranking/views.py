@@ -31,6 +31,7 @@ def ranking(request):
                 ranking_score[userId]['correct_results'] += 1
             elif bet_result_team1 == bet_result_team2 and winner == 'draw':
                 ranking_score[userId]['pontuacao'] += 10
+                ranking_score[userId]['correct_winner'] += 1
             elif bet_result_team1 > bet_result_team2 and winner == 'team1':
                 ranking_score[userId]['pontuacao'] += 10
                 ranking_score[userId]['correct_winner'] += 1
