@@ -300,7 +300,7 @@ return `
                 <img src="/static/img/icon=${player1}.svg" alt="Bandeira do ${player1}" />
                 <figcaption>${player1}</figcaption>
             </figure>
-           <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_1' maxlength="2"> <h3>x</h3> <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_2' maxlength="2">
+           <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_1' maxlength="2" disabled> <h3>x</h3> <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_2' maxlength="2" disabled>
             <figure>
                 <img src="/static/img/icon=${player2}.svg" alt="Bandeira do ${player2}" />
                 <figcaption>${player2}</figcaption>

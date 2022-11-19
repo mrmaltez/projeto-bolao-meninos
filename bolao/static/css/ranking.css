@@ -31,6 +31,7 @@ h2 button:hover {
 a {
   text-decoration: none;
   color: #000;
+  font-family: 'Robot', 'sans-serif';
 }
 
 h1 {
@@ -51,6 +52,23 @@ h2 {
   line-height:1em;
   padding-bottom: 2em;
   color: #fff;
+}
+
+.subtitle {
+  position: relative;
+  background: #1d1c19;
+  max-width: 280px;
+  margin: -30px auto 50px;
+  padding: 10px 0;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 6px;
+
+ 
+}
+
+.subtitle h3 {
+  font-size: 1em;
 }
 
 .container th h1 {
@@ -158,5 +176,17 @@ h2 {
  
 }
 
+.subtitle {
+  left: 0;
+  margin: -35px auto 40px;
+  max-width: 240px;
+  padding: 10px 0;
+
 }
 
+.subtitle h3 {
+  font-size: .75em;
+
+}
+
+}

@@ -6,7 +6,7 @@
   z-index: 1;
   background: #1d1c19;
   max-width: 360px;
-  margin: 0 auto 100px;
+  margin: 0 auto;
   padding: 20px 0;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -36,6 +36,13 @@
   border-bottom: 2px solid #f7dd43;
   border-radius: 6px;
 }
+.form .error {
+  color: red;
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: -15px;
+}
+
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
@@ -65,7 +72,7 @@
   background: #c0b40f;
 }
 .form .message {
-  margin: 15px 0 0;
+  margin: 25px 0 0;
   color: #b3b3b3;
   font-size: 12px;
 }
@@ -115,4 +122,11 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
+}
+
+@media (max-width: 800px) {
+  .caixa-registro {
+    margin: 0 auto 100px;
+    margin-top: 50px;
+  }
 }

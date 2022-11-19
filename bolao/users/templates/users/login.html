@@ -23,12 +23,12 @@
         <div class="form">
             <form class ="login-form" action="{% url 'login' %}" method="POST"> {% csrf_token %}
                 {% if fl_erro == 1%}
-                <p style="color:red;">Email ou senha inválidos.</p>
+                <p class ="error">Email ou senha inválidos.</p>
                 {% elif fl_register == 1%}
-                <p style="color:green;">Usuário registrado com sucesso!</p>
+                <p class ="success">Usuário registrado com sucesso!</p>
                 {% endif %}
-                <input type ='text' placeholder="username" name="username">
-                <input type ='password' placeholder="senha" name="password">
+                <input type ='text' placeholder="Username" name="username">
+                <input type ='password' placeholder="Senha" name="password">
                 <button>login</button>
                 <p class="message">Ainda não tem conta? <a href="../register">Crie uma agora!</a></p>
             </form>

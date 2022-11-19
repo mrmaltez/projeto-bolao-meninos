@@ -15,14 +15,17 @@ var GLOBAL_PATH = '{{ STATIC_PATH }}';
     
     <header>
 
-        <h3>BOLÃO DOS MENINOS</h1>
+        <h3>BOLÃO DOS MENINOS</h3>
    <div>
        <form action="{% url 'jogos' %}" method="POST"> {% csrf_token %}
-        {% if fl_games == 1%}
-        <p style="color:green;">Suas apostas foram enviadas!</p>
-        {% endif %}
        <button name = 'ranking' value = 'ranking'><a>RANKING</a></button>
        <button name = 'logout' value = 'logout'><a>LOGOUT</a></button>
+       </br>
+       </br>
+       </br>
+       {% if fl_games == 1%}
+        <p style="color:green;">Suas apostas foram enviadas com sucesso!</p>
+        {% endif %}
         </form>
     </div> 
     </header>  
