@@ -46,5 +46,15 @@ var GLOBAL_PATH = '{{ STATIC_PATH }}';
 
     
     <script src="{% static 'js/main.js' %}"></script>
+
+    {% for bet in bets %}
+    <script>
+        var gameId = "{{bet.fk_gameId}}".split(":")[1].split('-')[0].replace(/\s/g, '');
+        // var gameId = string(gameId)
+        console.log(`jogo_${gameId}_time_1`)
+        document.getElementById(`jogo_${gameId}_time_1`).value = {{bet.team1_score}};
+        document.getElementById(`jogo_${gameId}_time_2`).value = {{bet.team2_score}};
+    </script>
+    {%endfor%}
 </body>
 </html>

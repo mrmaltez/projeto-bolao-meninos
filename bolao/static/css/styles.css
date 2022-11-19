@@ -8,22 +8,9 @@
     --card-title-border-color: #746615;
     --card-color-primary: #f7dd43;
     --card-bg-color: #1d1c19;
-    --bg-img: url(./static/img/bg-yellow.svg);
   }
   
-  body.blue {
-    --card-title-border-color: #338AF3;
-    --card-color-primary: #338AF3;
-    --card-bg-color: #202024;
-    --bg-img: url(./static/img/bg-blue.svg);
-  }
   
-  body.green {
-    --card-title-border-color: #046C3F;
-    --card-color-primary: #046C3F;
-    --card-bg-color: #1A1F18;
-    --bg-img: url(./static/img/bg-green.svg);
-  }
   ul {
     list-style: none;
   }

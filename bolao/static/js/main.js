@@ -5,7 +5,7 @@ function createGame(player1, player2, id) {
                     <img src="/static/img/icon=${player1}.svg" alt="Bandeira do ${player1}" />
                     <figcaption>${player1}</figcaption>
                 </figure>
-                <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_1' maxlength="2"> <h3>x</h3> <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_2' maxlength="2">
+                <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_1' maxlength="2" id = 'jogo_${id}_time_1'> <h3>x</h3> <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_2' maxlength="2" id = 'jogo_${id}_time_2'>
                 <figure>
                     <img src="/static/img/icon=${player2}.svg" alt="Bandeira do ${player2}" />
                     <figcaption>${player2}</figcaption>
@@ -24,7 +24,7 @@ function createGame(player1, player2, id) {
     `
   }
   var jogos = { 'card_1':{
-    'dia': '20/11',
+    'dia': '20/10',
     'dia_semana': 'Domingo',
     'jogos':{'jogo1': {'time1':'qatar',
                        'time2':'ecuador',
@@ -220,7 +220,7 @@ function createGame(player1, player2, id) {
                       }
   },
   'card_13':{
-    'dia': '02/10',
+    'dia': '02/12',
     'dia_semana': 'Sexta',
     'jogos':{'jogo1': {'time1':'south korea',
                        'time2':'portugal',
@@ -300,7 +300,7 @@ return `
                 <img src="/static/img/icon=${player1}.svg" alt="Bandeira do ${player1}" />
                 <figcaption>${player1}</figcaption>
             </figure>
-           <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_1' maxlength="2" disabled> <h3>x</h3> <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_2' maxlength="2" disabled>
+           <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_1' maxlength="2" id = 'jogo_${id}_time_1' disabled> <h3>x</h3> <input class="heighttext" type="text" onkeypress="return onlynumber();" name='jogo_${id}_time_2' maxlength="2" id = 'jogo_${id}_time_2' disabled>
             <figure>
                 <img src="/static/img/icon=${player2}.svg" alt="Bandeira do ${player2}" />
                 <figcaption>${player2}</figcaption>
@@ -308,8 +308,6 @@ return `
           </li>
 `
 }
-
-
 
 
 
