@@ -33,9 +33,9 @@
                 <input type ='email' placeholder="Email" name="email" value={{ email }}> 
                 <input type ='password' placeholder="Senha" name="password" minlength="4" required>
                 {% else %}
-                <input type ='text' placeholder="Username" name="username">
-                <input type ='text' placeholder="Nome" name="primeiro_nome">
-                <input type ='text' placeholder="Sobrenome" name="sobrenome">
+                <input type ='text' placeholder="Username" name="username" required>
+                <input type ='text' placeholder="Nome" name="primeiro_nome" required>
+                <input type ='text' placeholder="Sobrenome" name="sobrenome" required>
                 <input type ='email' placeholder="Email" name="email"> 
                 <input type ='password' placeholder="Senha" name="password" minlength="4" required>
                 {% endif %}
