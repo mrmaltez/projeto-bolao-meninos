@@ -24,7 +24,7 @@ function createGame(player1, player2, id) {
     `
   }
   var jogos = { 'card_1':{
-    'dia': '20/10',
+    'dia': '20/11',
     'dia_semana': 'Domingo',
     'jogos':{'jogo1': {'time1':'qatar',
                        'time2':'ecuador',

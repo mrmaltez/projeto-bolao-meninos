@@ -3,10 +3,14 @@ from django.shortcuts import render
 from games.models import Bets, Results
 from .models import Ranking
 from django.contrib.auth.models import User
+from django.http import HttpResponse, HttpResponseRedirect
+
 
 # Create your views here.
 
 def ranking(request):
+    if request.POST.get('ranking') == 'ranking':
+        return HttpResponseRedirect('/games/jogos/')
     ranking_score = {}
     results = Results.objects.all()
     for result in results:
@@ -62,4 +66,6 @@ def ranking(request):
     all_entries = Ranking.objects.order_by('-pontuacao','-correct_results','-correct_winner')
     return render(request, 'ranking/ranking.html',
         context= {"ranking":all_entries})
+    
+    
             

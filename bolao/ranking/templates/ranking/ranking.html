@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="{% static 'css/ranking.css' %}">
 </head>
 
-<h1><span class="blue"></span>Ranking Geral<span class="blue"></span> 
-    <h2><button><a href="../games/jogos">Voltar para os jogos</a></button></p></h2>
-    
+<h1><span class="blue"></span>Ranking Geral<span class="blue"></span> </h1>
+    <form action="{% url 'ranking' %}" method="POST"> {% csrf_token %}
+    <h2><button name = 'ranking' value = 'ranking' ><a>Voltar para os jogos</a></button></p></h2>
+    </form>
 <body>
 
     <div class="subtitle">
