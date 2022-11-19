@@ -60,9 +60,6 @@ def ranking(request):
 
     # order ranking 
     all_entries = Ranking.objects.order_by('-pontuacao','-correct_results','-correct_winner')
-    users = all_entries.values_list('fk_userId',flat=True)
-    user_details = User.objects.filter(id__in=users)
-    print(user_details)
     return render(request, 'ranking/ranking.html',
-        context= {"ranking":zip(all_entries,user_details)})
+        context= {"ranking":all_entries})
             
