@@ -24,20 +24,20 @@
                 <input type ='text' placeholder="Nome" name="primeiro_nome" value = {{ nome }}>
                 <input type ='text' placeholder="Sobrenome" name="sobrenome" value = {{ sobrenome }}>
                 <input type ='email' placeholder="Email" name="email" value={{ email }}> 
-                <input type ='password' placeholder="Senha" name="password">
+                <input type ='password' placeholder="Senha" name="password" minlength="4" required>
                 {% elif fl_erro_nome == 1 %}
                 <p class ="error">Insira o nome e o sobrenome</p>
                 <input type ='text' placeholder="Username" name="username" value={{ username }}>
                 <input type ='text' placeholder="Nome" name="primeiro_nome" value = {{ nome }}>
                 <input type ='text' placeholder="Sobrenome" name="sobrenome" value = {{ sobrenome }}>
                 <input type ='email' placeholder="Email" name="email" value={{ email }}> 
-                <input type ='password' placeholder="Senha" name="password">
+                <input type ='password' placeholder="Senha" name="password" minlength="4" required>
                 {% else %}
                 <input type ='text' placeholder="Username" name="username">
                 <input type ='text' placeholder="Nome" name="primeiro_nome">
                 <input type ='text' placeholder="Sobrenome" name="sobrenome">
                 <input type ='email' placeholder="Email" name="email"> 
-                <input type ='password' placeholder="Senha" name="password">
+                <input type ='password' placeholder="Senha" name="password" minlength="4" required>
                 {% endif %}
        
                 <button>Criar conta</button>

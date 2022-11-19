@@ -27,8 +27,8 @@
                 {% elif fl_register == 1%}
                 <p class ="success">Usuário registrado com sucesso!</p>
                 {% endif %}
-                <input type ='text' placeholder="Username" name="username">
-                <input type ='password' placeholder="Senha" name="password">
+                <input type ='text' placeholder="Username" name="username" required>
+                <input type ='password' placeholder="Senha" name="password" minlength="4" required>
                 <button>login</button>
                 <p class="message">Ainda não tem conta? <a href="../register">Crie uma agora!</a></p>
             </form>
