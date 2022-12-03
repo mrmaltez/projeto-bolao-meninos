@@ -240,25 +240,25 @@ function createGame(player1, player2, id) {
     }, */
   
 
-  'card_1':{
-    'dia': '02/12',
-    'dia_semana': 'Sexta',
-    'jogos':{'jogo1': {'time1':'south korea',
-                       'time2':'portugal',
-                      'id':49},
-            'jogo2': {'time1':'ghana',
-                       'time2':'uruguay',
-                      'id':50},
-            'jogo3': {'time1':'serbia',
-                       'time2':'switzerland',
-                      'id':51},
-            'jogo4': {'time1':'cameroon',
-                       'time2':'brazil',
-                      'id':52},
-                      }
-  },
+  // 'card_1':{
+  //   'dia': '02/12',
+  //   'dia_semana': 'Sexta',
+  //   'jogos':{'jogo1': {'time1':'south korea',
+  //                      'time2':'portugal',
+  //                     'id':49},
+  //           'jogo2': {'time1':'ghana',
+  //                      'time2':'uruguay',
+  //                     'id':50},
+  //           'jogo3': {'time1':'serbia',
+  //                      'time2':'switzerland',
+  //                     'id':51},
+  //           'jogo4': {'time1':'cameroon',
+  //                      'time2':'brazil',
+  //                     'id':52},
+  //                     }
+  // },
 
-  'card_2':{
+  'card_1':{
     'dia': '03/12',
     'dia_semana': 'Sábado',
     'jogos':{'jogo1': {'time1':'netherlands',
@@ -269,7 +269,7 @@ function createGame(player1, player2, id) {
                       'id':54},
                       }
   },
-  'card_3':{
+  'card_2':{
     'dia': '04/12',
     'dia_semana': 'Domingo',
     'jogos':{'jogo1': {'time1':'france',
@@ -280,22 +280,36 @@ function createGame(player1, player2, id) {
                       'id':56},
                       }
   },
-  'card_4':{
+  'card_3':{
     'dia': '05/12',
     'dia_semana': 'Segunda',
     'jogos':{'jogo1': {'time1':'japan',
                        'time2':'croatia',
                       'id':57},
+            'jogo2': {'time1':'brazil',
+                      'time2':'south korea',
+                      'id':59},
                       }
   },
-  'card_5':{
+  'card_4':{
     'dia': '06/12',
     'dia_semana': 'Terça',
     'jogos':{'jogo1': {'time1':'morocco',
                        'time2':'spain',
                       'id':58},
+             'jogo2':{'time1':'portugal',
+                      'time2': 'switzerland',
+                      'id':60}
                       }
   },
+  'card_5':{
+    'dia': '09/12',
+    'dia_semana': 'Terça',
+    'jogos':{'jogo1': {'time1':'netherlands',
+                       'time2':'argentina',
+                      'id':61},
+                      }
+  }
  
 
 }
