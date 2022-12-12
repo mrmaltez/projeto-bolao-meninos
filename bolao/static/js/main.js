@@ -258,56 +258,86 @@ function createGame(player1, player2, id) {
   //                     }
   // },
 
+  // 'card_1':{
+  //   'dia': '03/12',
+  //   'dia_semana': 'Sábado',
+  //   'jogos':{'jogo1': {'time1':'netherlands',
+  //                      'time2':'united states',
+  //                     'id':53},
+  //           'jogo2': {'time1':'argentina',
+  //                      'time2':'australia',
+  //                     'id':54},
+  //                     }
+  // },
+  // 'card_2':{
+  //   'dia': '04/12',
+  //   'dia_semana': 'Domingo',
+  //   'jogos':{'jogo1': {'time1':'france',
+  //                      'time2':'poland',
+  //                     'id':55},
+  //           'jogo2': {'time1':'england',
+  //                      'time2':'senegal',
+  //                     'id':56},
+  //                     }
+  // },
+  // 'card_3':{
+  //   'dia': '05/12',
+  //   'dia_semana': 'Segunda',
+  //   'jogos':{'jogo1': {'time1':'japan',
+  //                      'time2':'croatia',
+  //                     'id':57},
+  //           'jogo2': {'time1':'brazil',
+  //                     'time2':'south korea',
+  //                     'id':59},
+  //                     }
+  // },
+  // 'card_4':{
+  //   'dia': '06/12',
+  //   'dia_semana': 'Terça',
+  //   'jogos':{'jogo1': {'time1':'morocco',
+  //                      'time2':'spain',
+  //                     'id':58},
+  //            'jogo2':{'time1':'portugal',
+  //                     'time2': 'switzerland',
+  //                     'id':60}
+  //                     }
+  // },
+  // 'card_1':{
+  //   'dia': '09/12',
+  //   'dia_semana': 'Sexta',
+  //   'jogos':{'jogo1': {'time1':'brazil',
+  //   'time2':'croatia',
+  //  'id':62},
+  //     'jogo2': {'time1':'netherlands',
+  //                      'time2':'argentina',
+  //                     'id':61},
+  //                     }
+  // },
+  // 'card_2':{
+  //   'dia': '10/12',
+  //   'dia_semana': 'Sábado',
+  //   'jogos':{'jogo1': {'time1':'morocco',
+  //   'time2':'portugal',
+  //  'id':63},
+  //     'jogo2': {'time1':'england',
+  //                      'time2':'france',
+  //                     'id':64},
+  //                     }
+  // }
   'card_1':{
-    'dia': '03/12',
-    'dia_semana': 'Sábado',
-    'jogos':{'jogo1': {'time1':'netherlands',
-                       'time2':'united states',
-                      'id':53},
-            'jogo2': {'time1':'argentina',
-                       'time2':'australia',
-                      'id':54},
+    'dia': '09/12',
+    'dia_semana': 'Sexta',
+    'jogos':{'jogo1': {'time1':'argentina',
+    'time2':'croatia',
+   'id':63}
                       }
   },
   'card_2':{
-    'dia': '04/12',
-    'dia_semana': 'Domingo',
+    'dia': '10/12',
+    'dia_semana': 'Sábado',
     'jogos':{'jogo1': {'time1':'france',
-                       'time2':'poland',
-                      'id':55},
-            'jogo2': {'time1':'england',
-                       'time2':'senegal',
-                      'id':56},
-                      }
-  },
-  'card_3':{
-    'dia': '05/12',
-    'dia_semana': 'Segunda',
-    'jogos':{'jogo1': {'time1':'japan',
-                       'time2':'croatia',
-                      'id':57},
-            'jogo2': {'time1':'brazil',
-                      'time2':'south korea',
-                      'id':59},
-                      }
-  },
-  'card_4':{
-    'dia': '06/12',
-    'dia_semana': 'Terça',
-    'jogos':{'jogo1': {'time1':'morocco',
-                       'time2':'spain',
-                      'id':58},
-             'jogo2':{'time1':'portugal',
-                      'time2': 'switzerland',
-                      'id':60}
-                      }
-  },
-  'card_5':{
-    'dia': '09/12',
-    'dia_semana': 'Terça',
-    'jogos':{'jogo1': {'time1':'netherlands',
-                       'time2':'argentina',
-                      'id':61},
+    'time2':'morocco',
+   'id':64},
                       }
   }
  
