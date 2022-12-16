@@ -324,20 +324,38 @@ var jogos = {
 //                     'id':64},
 //                     }
 // }
+//
+//'card_1':{
+//'dia': '13/12',
+//'dia_semana': 'Terça',
+//'jogos':{'jogo1': {'time1':'argentina',
+//'time2':'croatia',
+//'id':65}
+//                    }
+//},
+//'card_2':{
+//'dia': '14/12',
+//'dia_semana': 'Quarta',
+//'jogos':{'jogo1': {'time1':'france',
+//'time2':'morocco',
+//'id':66},
+//                    }
+//}
+
 'card_1':{
-  'dia': '13/12',
-  'dia_semana': 'Terça',
-  'jogos':{'jogo1': {'time1':'argentina',
-  'time2':'croatia',
- 'id':65}
+  'dia': '17/12',
+  'dia_semana': 'Sábado',
+  'jogos':{'jogo1': {'time1':'croatia',
+  'time2':'morocco',
+ 'id':67}
                     }
 },
 'card_2':{
-  'dia': '14/12',
-  'dia_semana': 'Quarta',
+  'dia': '18/12',
+  'dia_semana': 'Domingo',
   'jogos':{'jogo1': {'time1':'france',
-  'time2':'morocco',
- 'id':66},
+  'time2':'argentina',
+ 'id':68},
                     }
 }
 
